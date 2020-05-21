@@ -10,11 +10,11 @@ namespace RoryBot
     {
         //declare a list to store the values from the database 
         private List<string> data;
-        //declare a oracleConneaction to the database
+        //declare a MySqlConneaction to the database
         private MySqlConnection con;
         //declare a datareader to read the data from the database 
         private MySqlDataReader dr;
-        //declare a oracleCommand to excute sql command
+        //declare a MySqlCommand to excute sql command
         private MySqlCommand cmd;
         //declare the connaction string that will contain the conncation information to the database
         private string connectionString;
@@ -43,9 +43,9 @@ namespace RoryBot
             string sql = $"select code from code where code_type='{solution}' and unit_id={unitId}";
             //open a connection to the database
             con.Open();
-            ////OracleCommand object with sql command
+            //MySqlCommand object with sql command
             cmd = new MySqlCommand(sql, con);
-            ////sql command
+            //sql command
             cmd.Connection = con;
             cmd.CommandType = CommandType.Text;
             //read the data from the database 
@@ -69,9 +69,9 @@ namespace RoryBot
             string sql = $"select code from code where code_type='{solution}' and unit_id={unitId} and code_number={numberOfSolution}";
             //open a connection to the database
             con.Open();
-            ////OracleCommand object with sql command
+            //MySqlCommand object with sql command
             cmd = new MySqlCommand(sql, con);
-            ////sql command
+            //sql command
             cmd.Connection = con;
             cmd.CommandType = CommandType.Text;
             //read the data from the database 
@@ -97,7 +97,7 @@ namespace RoryBot
             string sql = $"select unit_description from unit where unit_id='{unitId}'";
             //open a connection to the database
             con.Open();
-            ////OracleCommand object with sql command
+            //MySqlCommand object with sql command
             cmd = new MySqlCommand(sql, con);
             ////sql command
             cmd.Connection = con;
